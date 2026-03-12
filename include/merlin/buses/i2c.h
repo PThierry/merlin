@@ -29,11 +29,12 @@ struct i2c_bus_fops {
 
 /* structure that declare a I2C Bus driver, which is a type of platform driver */
 struct i2c_driver {
-	/**< I2C specific fops, see above */
 	struct i2c_bus_fops * fops;
-	/**< platform-generic fops */
+	/**< I2C specific fops, see above */
 	struct platform_device * platform_fops;
+	/**< platform-generic fops */
 	void *private_data;
+	/**< private data for the driver, if needed */
 };
 
 

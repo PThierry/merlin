@@ -45,22 +45,22 @@ struct platform_fops {
  *
  */
 struct platform_device_driver {
-	/**< unique device handle associated to the device, forge at boot time */
 	devh_t 	  devh;
-	/**< device label as set in the dts file using sentry,label attribute */
+	/**< unique device handle associated to the device, forge at boot time */
 	uint32_t  label;
-	/**< device information retrieved from DTS, based on the label */
+	/**< device label as set in the dts file using sentry,label attribute */
 	const devinfo_t *devinfo;
-	/**< device name for debug purpose */
+	/**< device information retrieved from DTS, based on the label */
 	const char * name;
-	/**< device compatible field declared in the bus driver, used at probe time */
+	/**< device name for debug purpose */
 	const char * compatible;
-	/**< per driver-type fops vary depending on the driver family */
+	/**< device compatible field declared in the bus driver, used at probe time */
 	void * driver_fops;
-	/**< generic platform operations, common to all platform drivers */
+	/**< per driver-type fops vary depending on the driver family */
 	struct platform_fops platform_fops;
-	/**< device type, that allows to discriminates the way merlin interact with the dts backend */
+	/**< generic platform operations, common to all platform drivers */
 	device_type_t type;
+	/**< device type, that allows to discriminates the way merlin interact with the dts backend */
 };
 
 /* platform level utility functions, that do not need driver-level implementation */
